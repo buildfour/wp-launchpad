@@ -1,0 +1,38 @@
+activity:
+  - logActivity:
+  - getActivitiesForUser:
+auth:
+  - generateTokenWithUserId:
+  - generateTokenForUser:
+  - generateTokenWithPassword:
+  - validateAdminPassword:
+  - validateTokenAndGetSession:
+  - exchangeTokenForSession:
+  - getSessionBySessionId:
+  - validateToken:
+  - linkUserToToken:
+  - parseTokenFromFile:
+emailIdp:
+  - login:
+  - startRegistration:
+  - verifyRegistrationCode:
+  - finishRegistration:
+  - startPasswordReset:
+  - verifyPasswordResetCode:
+  - finishPasswordReset:
+jwtRefresh:
+  - refreshAccessToken:
+greeting:
+  - hello:
+project:
+  - getProjectsForUser:
+  - getAllProjects:
+  - getProjectById:
+  - createProject:
+  - updateProjectState:
+  - deleteProject:
+user:
+  - registerUser:
+  - getUserByEmail:
+  - getUserById:
+  - updateUser:

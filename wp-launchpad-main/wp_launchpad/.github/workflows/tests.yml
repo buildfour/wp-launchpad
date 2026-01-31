@@ -1,0 +1,47 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      VERSION: '3.2.2'
+      SERVERPOD_PASSWORD_database: 'xfWc50vlz5h2gtp41l00ZwfaaB1z-7r-'
+      SERVERPOD_PASSWORD_redis: 'E5S3jIP-Avz8vFbKt7MEE_HZlxT6etmy'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.32.8'
+
+      - name: Start containers
+        working-directory: wp_launchpad_server
+        run: docker compose up --build -d
+
+      - name: Install dependencies
+        working-directory: wp_launchpad_server
+        run: dart pub get
+
+      - name: Install Serverpod CLI
+        working-directory: wp_launchpad_server
+        run: dart pub global activate serverpod_cli $VERSION
+
+      - name: Run Serverpod generator
+        working-directory: wp_launchpad_server
+        run: serverpod generate
+
+      - name: Run tests
+        working-directory: wp_launchpad_server
+        run: dart test
+
+      - name: Stop containers
+        if: always()
+        working-directory: wp_launchpad_server
+        run: docker compose down -v

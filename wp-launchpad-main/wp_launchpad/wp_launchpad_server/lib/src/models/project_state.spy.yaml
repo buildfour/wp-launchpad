@@ -1,0 +1,19 @@
+class: ProjectState
+table: project_state
+fields:
+  visitorId: String?
+  userId: int?
+  userEmail: String?
+  name: String
+  domain: String?
+  serverIp: String?
+  dnsStatus: String?
+  hostingProvider: String?
+  databaseName: String?
+  databaseUser: String?
+  databasePassword: String?
+  databaseHost: String?
+  installationStatus: String?
+  template: String?
+  currentStep: int?
+  lastModified: DateTime

@@ -1,0 +1,9 @@
+class: ActivityLog
+table: activity_log
+fields:
+  visitorId: String
+  action: String
+  details: String?
+  projectId: int?
+  projectName: String?
+  createdAt: DateTime

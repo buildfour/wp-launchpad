@@ -1,0 +1,8 @@
+class: AccessSession
+table: access_session
+fields:
+  token: String
+  expiry: DateTime
+  userId: int?
+  userEmail: String?
+  sessionId: String?

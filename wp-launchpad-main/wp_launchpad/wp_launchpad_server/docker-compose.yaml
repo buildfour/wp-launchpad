@@ -1,0 +1,44 @@
+services:
+  # Development services
+  postgres:
+    image: pgvector/pgvector:pg16
+    ports:
+      - "8090:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: wp_launchpad
+      POSTGRES_PASSWORD: "CsNqGqp6c06lsJQtjd8vyGihz8NAtzRS"
+    volumes:
+      - wp_launchpad_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:6.2.6
+    ports:
+      - "8091:6379"
+    command: redis-server --requirepass "cPDgJA2OwY70AvQIUwcE5_G14LLtaE6R"
+    environment:
+      - REDIS_REPLICATION_MODE=master
+
+  # Test services
+  postgres_test:
+    image: pgvector/pgvector:pg16
+    ports:
+      - "9090:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: wp_launchpad_test
+      POSTGRES_PASSWORD: "xfWc50vlz5h2gtp41l00ZwfaaB1z-7r-"
+    volumes:
+      - wp_launchpad_test_data:/var/lib/postgresql/data
+
+  redis_test:
+    image: redis:6.2.6
+    ports:
+      - "9091:6379"
+    command: redis-server --requirepass "E5S3jIP-Avz8vFbKt7MEE_HZlxT6etmy"
+    environment:
+      - REDIS_REPLICATION_MODE=master
+
+volumes:
+  wp_launchpad_data:
+  wp_launchpad_test_data:
