@@ -1,6 +1,6 @@
 ## WP Launchpad
 
-WP Launchpad guides you through setting up a self-hosted WordPress site. It doesn't deploy WordPress for you—it generates configuration files and provides step-by-step instructions tailored to your hosting provider.
+WP Launchpad guides you through setting up a self-hosted WordPress site. It generates configuration files and provides step-by-step instructions tailored to your hosting provider.
 
 ## Features
 
@@ -10,20 +10,6 @@ WP Launchpad guides you through setting up a self-hosted WordPress site. It does
 - **Project management** - handle multiple WordPress installations
 - **Documentation** - comprehensive guides for DNS, hosting, and WordPress configuration
 - **PDF reports** - downloadable project summary and technical documentation
-
-## Live Demo
-
-**URL:** https://wplaunchpad.serverpod.space/app/
-
-### Access Tokens
-
-To use the app, you need an access token. Use one of these demo tokens:
-
-| Token | User ID | Notes |
-|-------|---------|-------|
-| `6034fa61-3cc6-47b9-80d6-27dc205ee4f3` | WPL-2853FED8 | Demo account |
-| `29c41063-f616-410b-bbd0-85b1f18f744f` | WPL-8D716B4B | Demo account |
-| `3dc6c14b-8e73-498e-86e5-f42247ff9e07` | WPL-8F981E9A | Demo account |
 
 
 ## Tech Stack
